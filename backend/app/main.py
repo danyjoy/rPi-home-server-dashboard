@@ -7,10 +7,24 @@ relevant for the local Vite dev server.
 
 from __future__ import annotations
 
+from contextlib import asynccontextmanager
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.routers import network, storage, system
+from app.services.network_metrics import start_sampler, stop_sampler
+
+
+@asynccontextmanager
+async def _lifespan(app: FastAPI):
+    # Network rates are measured over a fixed server-side interval by a
+    # background sampler, so they stay correct regardless of client polling.
+    start_sampler()
+    try:
+        yield
+    finally:
+        stop_sampler()
 
 
 def create_app() -> FastAPI:
@@ -18,6 +32,7 @@ def create_app() -> FastAPI:
         title="Home Server Command Center",
         version="0.1.0",
         description="Phase 1: system and storage monitoring.",
+        lifespan=_lifespan,
     )
 
     # Dev-only: allow the Vite dev server to call the API directly.
