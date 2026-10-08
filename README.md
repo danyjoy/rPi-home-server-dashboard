@@ -46,8 +46,8 @@ mkdir -p ~/command-center && cd ~/command-center
 
 **2. Download the two small config files:**
 ```bash
-curl -O https://raw.githubusercontent.com/danyjoy/rip-home-server-dashboard/main/docker-compose.prod.yml
-curl -o .env https://raw.githubusercontent.com/danyjoy/rip-home-server-dashboard/main/.env.example
+curl -O https://raw.githubusercontent.com/danyjoy/rPi-home-server-dashboard/main/docker-compose.prod.yml
+curl -o .env https://raw.githubusercontent.com/danyjoy/rPi-home-server-dashboard/main/.env.example
 ```
 - `docker-compose.prod.yml` tells Docker which images to run.
 - `.env` is a plain-text settings file you can edit (see
@@ -80,11 +80,65 @@ docker compose -f docker-compose.prod.yml down
 
 # Start it again later
 docker compose -f docker-compose.prod.yml up -d
+```
 
-# Update to the latest version
+---
+
+## Updating to a new version
+
+New images are published automatically whenever the project changes. Getting
+them on your Pi is two commands: **pull** the new image, then **restart** the
+app. Your `.env` settings are kept.
+
+### If you're on `latest` (the default)
+
+```bash
+cd ~/command-center     # the folder you set up earlier
+docker compose -f docker-compose.prod.yml pull   # download the newest images
+docker compose -f docker-compose.prod.yml up -d  # restart using them
+```
+
+That's all. `pull` fetches whatever is newest; `up -d` swaps the running
+containers for the updated ones. If nothing new was published, `pull` simply
+reports the images are already up to date and nothing changes.
+
+### Moving to a specific released version
+
+Each release also has a fixed version tag (for example `v1.0.0`), so you can run
+an exact version instead of always tracking `latest`. Edit `.env` and set:
+
+```
+TAG=v1.0.0
+```
+
+Then pull and restart:
+
+```bash
 docker compose -f docker-compose.prod.yml pull
 docker compose -f docker-compose.prod.yml up -d
 ```
+
+Browse the available versions on the
+[Releases page](https://github.com/danyjoy/rPi-home-server-dashboard/releases).
+To go back to always-newest, set `TAG=latest` and pull again.
+
+### Free up old images (optional)
+
+After several updates, old image layers pile up. Reclaim the space with:
+
+```bash
+docker image prune -f
+```
+
+### Did it actually update?
+
+```bash
+# Show the image each container is currently running
+docker compose -f docker-compose.prod.yml images
+```
+
+Compare the tag/ID there with what you expected. You can also just reload the
+dashboard in your browser.
 
 ---
 

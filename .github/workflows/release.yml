@@ -28,8 +28,8 @@ jobs:
           body: |
             Container images for this release are published to GHCR:
 
-            - `ghcr.io/danyjoy/rip-home-server-dashboard-backend:${{ github.ref_name }}`
-            - `ghcr.io/danyjoy/rip-home-server-dashboard-frontend:${{ github.ref_name }}`
+            - `ghcr.io/danyjoy/rpi-home-server-dashboard-backend:${{ github.ref_name }}`
+            - `ghcr.io/danyjoy/rpi-home-server-dashboard-frontend:${{ github.ref_name }}`
 
             Deploy on the Raspberry Pi by setting `TAG=${{ github.ref_name }}` in
             `.env` and running `docker compose -f docker-compose.prod.yml up -d`.

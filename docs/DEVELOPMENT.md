@@ -81,7 +81,7 @@ Two GitHub Actions workflows handle images and releases:
 
 - `.github/workflows/build-images.yml` — on every push to `main` and on `v*`
   tags, builds the backend and frontend for **arm64 + amd64** and pushes them to
-  GHCR (`ghcr.io/danyjoy/rip-home-server-dashboard-{backend,frontend}`).
+  GHCR (`ghcr.io/danyjoy/rpi-home-server-dashboard-{backend,frontend}`).
 - `.github/workflows/release.yml` — on a `v*` tag, creates a GitHub Release with
   generated notes.
 
