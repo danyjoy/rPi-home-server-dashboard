@@ -32,6 +32,41 @@ docker compose up --build
 Then open `http://<pi-ip>:9180` from your phone or `http://localhost:9180` on the
 host. Stop with `docker compose down`; configuration persists via `.env`.
 
+## Deploy on the Raspberry Pi (prebuilt images, no cloning)
+
+A GitHub Actions workflow builds multi-arch images (arm64 + amd64) on every push
+to `main` and publishes them to the GitHub Container Registry (GHCR):
+
+- `ghcr.io/danyjoy/rip-home-server-dashboard-backend`
+- `ghcr.io/danyjoy/rip-home-server-dashboard-frontend`
+
+On the Pi you only need Docker, the `docker-compose.prod.yml` file, and your
+`.env`. No repository clone or local build:
+
+```bash
+# One-time: make the GHCR packages public (Package settings on GitHub), OR
+# log in with a token that has read:packages:
+#   echo <TOKEN> | docker login ghcr.io -u danyjoy --password-stdin
+
+# Fetch just the deploy compose file and env template:
+curl -O https://raw.githubusercontent.com/danyjoy/rip-home-server-dashboard/main/docker-compose.prod.yml
+curl -o .env https://raw.githubusercontent.com/danyjoy/rip-home-server-dashboard/main/.env.example
+
+# Pull and run the prebuilt images:
+docker compose -f docker-compose.prod.yml pull
+docker compose -f docker-compose.prod.yml up -d
+```
+
+Open `http://<pi-ip>:9180`. To update later, re-pull and bring it up again:
+
+```bash
+docker compose -f docker-compose.prod.yml pull
+docker compose -f docker-compose.prod.yml up -d
+```
+
+Pin a specific build instead of `latest` by setting `TAG` (e.g. a short commit
+SHA or a `v1.0.0` git tag) in `.env`.
+
 ### Reporting a media drive
 
 Edit `STORAGE_MOUNTS` in `.env`, e.g. `root:/,media:/mnt/media`, and ensure the

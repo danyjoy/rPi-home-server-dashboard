@@ -1,0 +1,40 @@
+# Home Server Command Center - Phase 1 (deploy / prebuilt images)
+#
+# Use this on the Raspberry Pi to run prebuilt images from GHCR instead of
+# building locally. The CI workflow (.github/workflows/build-images.yml) pushes
+# multi-arch images (arm64 + amd64) on every push to main.
+#
+# Usage on the Pi:
+#   export OWNER=danyjoy        # your GitHub username/owner (lowercase)
+#   docker compose -f docker-compose.prod.yml pull
+#   docker compose -f docker-compose.prod.yml up -d
+#
+# If the GHCR packages are private, log in first:
+#   echo <TOKEN_WITH_read:packages> | docker login ghcr.io -u <user> --password-stdin
+#
+# Security is identical to the build-from-source compose: non-root containers,
+# no privileged mode, no Docker socket, read-only host mounts only.
+
+services:
+  backend:
+    image: ghcr.io/${OWNER:-danyjoy}/rip-home-server-dashboard-backend:${TAG:-latest}
+    restart: unless-stopped
+    environment:
+      HOST_PROC: /host/proc
+      HOST_SYS: /host/sys
+      HOST_ROOT: /host/root
+      STORAGE_MOUNTS: ${STORAGE_MOUNTS:-root:/}
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/host/root:ro
+    expose:
+      - "8000"
+
+  frontend:
+    image: ghcr.io/${OWNER:-danyjoy}/rip-home-server-dashboard-frontend:${TAG:-latest}
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "${FRONTEND_PORT:-9180}:80"

@@ -1,0 +1,77 @@
+name: Build and publish images
+
+# Build the backend and frontend images for the Raspberry Pi (arm64) and amd64,
+# then push them to the GitHub Container Registry (GHCR). On the Pi you pull
+# these prebuilt images instead of cloning and building.
+
+on:
+  push:
+    branches: ["main"]
+    tags: ["v*"]
+  workflow_dispatch: # allow manual runs from the Actions tab
+
+env:
+  REGISTRY: ghcr.io
+  # Images: ghcr.io/<owner>/<repo>-backend and -frontend (lowercased below).
+  IMAGE_BASE: ${{ github.repository }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write # required to push to GHCR
+
+    strategy:
+      matrix:
+        include:
+          - name: backend
+            context: ./backend
+          - name: frontend
+            context: ./frontend
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # QEMU lets the amd64 runner build arm64 images for the Pi.
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      # Lowercase the repository owner/name; GHCR image names must be lowercase.
+      - name: Compute image name
+        id: image
+        run: |
+          echo "name=$(echo '${{ env.REGISTRY }}/${{ env.IMAGE_BASE }}-${{ matrix.name }}' | tr '[:upper:]' '[:lower:]')" >> "$GITHUB_OUTPUT"
+
+      - name: Docker metadata (tags & labels)
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ steps.image.outputs.name }}
+          tags: |
+            type=ref,event=branch
+            type=semver,pattern={{version}}
+            type=sha,format=short
+            type=raw,value=latest,enable={{is_default_branch}}
+
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          context: ${{ matrix.context }}
+          platforms: linux/arm64,linux/amd64
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha,scope=${{ matrix.name }}
+          cache-to: type=gha,mode=max,scope=${{ matrix.name }}
