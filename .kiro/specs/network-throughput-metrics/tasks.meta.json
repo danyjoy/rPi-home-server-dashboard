@@ -1,0 +1,251 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "1.1 Create `backend/app/models/network.py`": [
+      {
+        "executionId": "f218539c-e788-43fa-bab2-3e8f2d048c22",
+        "chatSessionId": "sess_5ad2ea30-4d76-4b99-b3cf-cc34c6a64b42",
+        "timestamp": 1791460674014
+      },
+      {
+        "executionId": "f218539c-e788-43fa-bab2-3e8f2d048c22",
+        "chatSessionId": "sess_5ad2ea30-4d76-4b99-b3cf-cc34c6a64b42",
+        "timestamp": 1791460682882
+      },
+      {
+        "executionId": "f218539c-e788-43fa-bab2-3e8f2d048c22",
+        "chatSessionId": "sess_5ad2ea30-4d76-4b99-b3cf-cc34c6a64b42",
+        "timestamp": 1791460810564
+      }
+    ],
+    "2.1 Implement the pure rate rule and sample container in `backend/app/services/network_metrics.py`": [
+      {
+        "executionId": "f218539c-e788-43fa-bab2-3e8f2d048c22",
+        "chatSessionId": "sess_5ad2ea30-4d76-4b99-b3cf-cc34c6a64b42",
+        "timestamp": 1791460674048
+      },
+      {
+        "executionId": "f218539c-e788-43fa-bab2-3e8f2d048c22",
+        "chatSessionId": "sess_5ad2ea30-4d76-4b99-b3cf-cc34c6a64b42",
+        "timestamp": 1791460814861
+      },
+      {
+        "executionId": "f218539c-e788-43fa-bab2-3e8f2d048c22",
+        "chatSessionId": "sess_5ad2ea30-4d76-4b99-b3cf-cc34c6a64b42",
+        "timestamp": 1791460868349
+      }
+    ],
+    "2.4 Implement fail-soft counter read and `collect_network()` orchestration": [
+      {
+        "executionId": "f218539c-e788-43fa-bab2-3e8f2d048c22",
+        "chatSessionId": "sess_5ad2ea30-4d76-4b99-b3cf-cc34c6a64b42",
+        "timestamp": 1791460674078
+      },
+      {
+        "executionId": "f218539c-e788-43fa-bab2-3e8f2d048c22",
+        "chatSessionId": "sess_5ad2ea30-4d76-4b99-b3cf-cc34c6a64b42",
+        "timestamp": 1791460873536
+      },
+      {
+        "executionId": "f218539c-e788-43fa-bab2-3e8f2d048c22",
+        "chatSessionId": "sess_5ad2ea30-4d76-4b99-b3cf-cc34c6a64b42",
+        "timestamp": 1791461061873
+      }
+    ],
+    "3. Checkpoint - backend service": [
+      {
+        "executionId": "f218539c-e788-43fa-bab2-3e8f2d048c22",
+        "chatSessionId": "sess_5ad2ea30-4d76-4b99-b3cf-cc34c6a64b42",
+        "timestamp": 1791460674135
+      },
+      {
+        "executionId": "f218539c-e788-43fa-bab2-3e8f2d048c22",
+        "chatSessionId": "sess_5ad2ea30-4d76-4b99-b3cf-cc34c6a64b42",
+        "timestamp": 1791461093040
+      },
+      {
+        "executionId": "f218539c-e788-43fa-bab2-3e8f2d048c22",
+        "chatSessionId": "sess_5ad2ea30-4d76-4b99-b3cf-cc34c6a64b42",
+        "timestamp": 1791461111607
+      }
+    ],
+    "4.1 Create `backend/app/routers/network.py`": [
+      {
+        "executionId": "f218539c-e788-43fa-bab2-3e8f2d048c22",
+        "chatSessionId": "sess_5ad2ea30-4d76-4b99-b3cf-cc34c6a64b42",
+        "timestamp": 1791460674189
+      },
+      {
+        "executionId": "f218539c-e788-43fa-bab2-3e8f2d048c22",
+        "chatSessionId": "sess_5ad2ea30-4d76-4b99-b3cf-cc34c6a64b42",
+        "timestamp": 1791461121726
+      },
+      {
+        "executionId": "f218539c-e788-43fa-bab2-3e8f2d048c22",
+        "chatSessionId": "sess_5ad2ea30-4d76-4b99-b3cf-cc34c6a64b42",
+        "timestamp": 1791461173449
+      }
+    ],
+    "4.2 Register the router in `backend/app/main.py`": [
+      {
+        "executionId": "f218539c-e788-43fa-bab2-3e8f2d048c22",
+        "chatSessionId": "sess_5ad2ea30-4d76-4b99-b3cf-cc34c6a64b42",
+        "timestamp": 1791460674215
+      },
+      {
+        "executionId": "f218539c-e788-43fa-bab2-3e8f2d048c22",
+        "chatSessionId": "sess_5ad2ea30-4d76-4b99-b3cf-cc34c6a64b42",
+        "timestamp": 1791461179350
+      },
+      {
+        "executionId": "f218539c-e788-43fa-bab2-3e8f2d048c22",
+        "chatSessionId": "sess_5ad2ea30-4d76-4b99-b3cf-cc34c6a64b42",
+        "timestamp": 1791461261182
+      }
+    ],
+    "5. Checkpoint - backend endpoint": [
+      {
+        "executionId": "f218539c-e788-43fa-bab2-3e8f2d048c22",
+        "chatSessionId": "sess_5ad2ea30-4d76-4b99-b3cf-cc34c6a64b42",
+        "timestamp": 1791460674248
+      },
+      {
+        "executionId": "f218539c-e788-43fa-bab2-3e8f2d048c22",
+        "chatSessionId": "sess_5ad2ea30-4d76-4b99-b3cf-cc34c6a64b42",
+        "timestamp": 1791461267159
+      },
+      {
+        "executionId": "f218539c-e788-43fa-bab2-3e8f2d048c22",
+        "chatSessionId": "sess_5ad2ea30-4d76-4b99-b3cf-cc34c6a64b42",
+        "timestamp": 1791461283545
+      }
+    ],
+    "6.1 Add network types and client function in `frontend/src/api/client.ts`": [
+      {
+        "executionId": "f218539c-e788-43fa-bab2-3e8f2d048c22",
+        "chatSessionId": "sess_5ad2ea30-4d76-4b99-b3cf-cc34c6a64b42",
+        "timestamp": 1791460674279
+      },
+      {
+        "executionId": "f218539c-e788-43fa-bab2-3e8f2d048c22",
+        "chatSessionId": "sess_5ad2ea30-4d76-4b99-b3cf-cc34c6a64b42",
+        "timestamp": 1791460874709
+      },
+      {
+        "executionId": "f218539c-e788-43fa-bab2-3e8f2d048c22",
+        "chatSessionId": "sess_5ad2ea30-4d76-4b99-b3cf-cc34c6a64b42",
+        "timestamp": 1791461062822
+      }
+    ],
+    "6.3 Add `formatRate` in `frontend/src/lib/format.ts`": [
+      {
+        "executionId": "f218539c-e788-43fa-bab2-3e8f2d048c22",
+        "chatSessionId": "sess_5ad2ea30-4d76-4b99-b3cf-cc34c6a64b42",
+        "timestamp": 1791460674344
+      },
+      {
+        "executionId": "f218539c-e788-43fa-bab2-3e8f2d048c22",
+        "chatSessionId": "sess_5ad2ea30-4d76-4b99-b3cf-cc34c6a64b42",
+        "timestamp": 1791460875540
+      },
+      {
+        "executionId": "f218539c-e788-43fa-bab2-3e8f2d048c22",
+        "chatSessionId": "sess_5ad2ea30-4d76-4b99-b3cf-cc34c6a64b42",
+        "timestamp": 1791461063896
+      }
+    ],
+    "7.1 Create `frontend/src/hooks/useNetwork.ts`": [
+      {
+        "executionId": "f218539c-e788-43fa-bab2-3e8f2d048c22",
+        "chatSessionId": "sess_5ad2ea30-4d76-4b99-b3cf-cc34c6a64b42",
+        "timestamp": 1791460674373
+      },
+      {
+        "executionId": "f218539c-e788-43fa-bab2-3e8f2d048c22",
+        "chatSessionId": "sess_5ad2ea30-4d76-4b99-b3cf-cc34c6a64b42",
+        "timestamp": 1791461122823
+      },
+      {
+        "executionId": "f218539c-e788-43fa-bab2-3e8f2d048c22",
+        "chatSessionId": "sess_5ad2ea30-4d76-4b99-b3cf-cc34c6a64b42",
+        "timestamp": 1791461174110
+      }
+    ],
+    "8.1 Add the network section to `frontend/src/pages/Dashboard.tsx`": [
+      {
+        "executionId": "f218539c-e788-43fa-bab2-3e8f2d048c22",
+        "chatSessionId": "sess_5ad2ea30-4d76-4b99-b3cf-cc34c6a64b42",
+        "timestamp": 1791460674406
+      },
+      {
+        "executionId": "f218539c-e788-43fa-bab2-3e8f2d048c22",
+        "chatSessionId": "sess_5ad2ea30-4d76-4b99-b3cf-cc34c6a64b42",
+        "timestamp": 1791461180092
+      },
+      {
+        "executionId": "f218539c-e788-43fa-bab2-3e8f2d048c22",
+        "chatSessionId": "sess_5ad2ea30-4d76-4b99-b3cf-cc34c6a64b42",
+        "timestamp": 1791461262039
+      }
+    ],
+    "9. Final checkpoint - full feature": [
+      {
+        "executionId": "f218539c-e788-43fa-bab2-3e8f2d048c22",
+        "chatSessionId": "sess_5ad2ea30-4d76-4b99-b3cf-cc34c6a64b42",
+        "timestamp": 1791460674437
+      },
+      {
+        "executionId": "f218539c-e788-43fa-bab2-3e8f2d048c22",
+        "chatSessionId": "sess_5ad2ea30-4d76-4b99-b3cf-cc34c6a64b42",
+        "timestamp": 1791461288148
+      },
+      {
+        "executionId": "f218539c-e788-43fa-bab2-3e8f2d048c22",
+        "chatSessionId": "sess_5ad2ea30-4d76-4b99-b3cf-cc34c6a64b42",
+        "timestamp": 1791461304176
+      }
+    ],
+    "1. Backend models — define the API contract": [
+      {
+        "executionId": "f218539c-e788-43fa-bab2-3e8f2d048c22",
+        "chatSessionId": "sess_5ad2ea30-4d76-4b99-b3cf-cc34c6a64b42",
+        "timestamp": 1791460810595
+      }
+    ],
+    "2. Backend service — stateful collection and pure rate logic": [
+      {
+        "executionId": "f218539c-e788-43fa-bab2-3e8f2d048c22",
+        "chatSessionId": "sess_5ad2ea30-4d76-4b99-b3cf-cc34c6a64b42",
+        "timestamp": 1791461061910
+      }
+    ],
+    "6. Frontend client and formatting": [
+      {
+        "executionId": "f218539c-e788-43fa-bab2-3e8f2d048c22",
+        "chatSessionId": "sess_5ad2ea30-4d76-4b99-b3cf-cc34c6a64b42",
+        "timestamp": 1791461063926
+      }
+    ],
+    "7. Frontend polling hook": [
+      {
+        "executionId": "f218539c-e788-43fa-bab2-3e8f2d048c22",
+        "chatSessionId": "sess_5ad2ea30-4d76-4b99-b3cf-cc34c6a64b42",
+        "timestamp": 1791461174143
+      }
+    ],
+    "4. Backend router and registration": [
+      {
+        "executionId": "f218539c-e788-43fa-bab2-3e8f2d048c22",
+        "chatSessionId": "sess_5ad2ea30-4d76-4b99-b3cf-cc34c6a64b42",
+        "timestamp": 1791461261266
+      }
+    ],
+    "8. Dashboard rendering and wiring": [
+      {
+        "executionId": "f218539c-e788-43fa-bab2-3e8f2d048c22",
+        "chatSessionId": "sess_5ad2ea30-4d76-4b99-b3cf-cc34c6a64b42",
+        "timestamp": 1791461262071
+      }
+    ]
+  }
+}

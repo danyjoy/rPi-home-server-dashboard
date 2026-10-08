@@ -1,5 +1,6 @@
 import { useSystem } from "../hooks/useSystem";
 import { useStorage } from "../hooks/useStorage";
+import { useNetwork } from "../hooks/useNetwork";
 import { MetricCard } from "../components/MetricCard";
 import { UsageBar } from "../components/UsageBar";
 import { StatusBadge } from "../components/StatusBadge";
@@ -8,6 +9,7 @@ import { Unavailable } from "../components/Unavailable";
 import {
   formatBytes,
   formatPercent,
+  formatRate,
   formatTemperature,
   formatUptime,
 } from "../lib/format";
@@ -16,6 +18,7 @@ import { temperatureStatus, usageStatus } from "../lib/thresholds";
 export function Dashboard() {
   const system = useSystem();
   const storage = useStorage();
+  const network = useNetwork();
 
   const sys = system.data;
   const online = !system.isError;
@@ -176,6 +179,53 @@ export function Dashboard() {
               </div>
             </MetricCard>
           ))}
+
+          {/* Network */}
+          {(() => {
+            const net = network.data?.aggregate;
+            return (
+              <MetricCard title="Network" prominent>
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="min-w-0">
+                    <div className="text-xs text-slate-400">Download</div>
+                    <div className="whitespace-nowrap text-xl font-bold text-slate-100 sm:text-2xl lg:text-3xl">
+                      {net && net.download_rate_bps !== null ? (
+                        formatRate(net.download_rate_bps)
+                      ) : (
+                        <Unavailable />
+                      )}
+                    </div>
+                  </div>
+                  <div className="min-w-0">
+                    <div className="text-xs text-slate-400">Upload</div>
+                    <div className="whitespace-nowrap text-xl font-bold text-slate-100 sm:text-2xl lg:text-3xl">
+                      {net && net.upload_rate_bps !== null ? (
+                        formatRate(net.upload_rate_bps)
+                      ) : (
+                        <Unavailable />
+                      )}
+                    </div>
+                  </div>
+                </div>
+                <div className="mt-3 flex justify-between text-xs text-slate-400">
+                  <span>
+                    {net && net.bytes_recv !== null ? (
+                      <>{formatBytes(net.bytes_recv)} received</>
+                    ) : (
+                      <Unavailable />
+                    )}
+                  </span>
+                  <span>
+                    {net && net.bytes_sent !== null ? (
+                      <>{formatBytes(net.bytes_sent)} sent</>
+                    ) : (
+                      <Unavailable />
+                    )}
+                  </span>
+                </div>
+              </MetricCard>
+            );
+          })()}
         </div>
       )}
     </>
