@@ -1,0 +1,31 @@
+# Environment / secrets
+.env
+*.env
+!.env.example
+
+# Local Kiro settings (may contain MCP tokens/credentials)
+.kiro/settings/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+
+# Node / frontend
+node_modules/
+dist/
+dist-ssr/
+*.local
+.vite/
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+*.log
+.idea/
+.vscode/*
+!.vscode/extensions.json

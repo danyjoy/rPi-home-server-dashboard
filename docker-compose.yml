@@ -1,0 +1,39 @@
+# Home Server Command Center - Phase 1
+#
+# Two services behind a single ingress:
+#   frontend (nginx) -> published on ${FRONTEND_PORT} (default 9180)
+#   backend  (FastAPI) -> internal only, reachable at http://backend:8000
+#
+# Security:
+#   - Both containers run non-root (backend via Dockerfile USER; nginx workers).
+#   - No privileged mode, no Docker socket.
+#   - Host access is limited to READ-ONLY mounts of /proc, /sys and the root fs.
+#
+# macOS note: these host mounts are harmless on Docker Desktop. The backend
+# simply finds no Linux sensor files and returns null for Pi-only fields.
+
+services:
+  backend:
+    build: ./backend
+    restart: unless-stopped
+    environment:
+      HOST_PROC: /host/proc
+      HOST_SYS: /host/sys
+      HOST_ROOT: /host/root
+      STORAGE_MOUNTS: ${STORAGE_MOUNTS:-root:/}
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/host/root:ro
+    expose:
+      - "8000"
+    # Not published to the LAN. Only the frontend talks to it, over the
+    # internal compose network.
+
+  frontend:
+    build: ./frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "${FRONTEND_PORT:-9180}:80"
