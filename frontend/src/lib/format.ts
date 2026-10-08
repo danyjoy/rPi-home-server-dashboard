@@ -12,6 +12,12 @@ export function formatBytes(bytes: number): string {
   return `${value.toFixed(decimals)} ${units[i]}`;
 }
 
+export function formatRate(bytesPerSec: number): string {
+  // Reuse formatBytes' 1024-scaling (and its zero/non-finite floor) and append
+  // a per-second suffix, e.g. "1.2 MB/s" or "0 B/s".
+  return `${formatBytes(bytesPerSec)}/s`;
+}
+
 export function formatPercent(percent: number): string {
   return `${percent.toFixed(percent >= 10 ? 0 : 1)}%`;
 }

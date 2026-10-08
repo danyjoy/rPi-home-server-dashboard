@@ -10,7 +10,7 @@ from __future__ import annotations
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.routers import storage, system
+from app.routers import network, storage, system
 
 
 def create_app() -> FastAPI:
@@ -34,6 +34,7 @@ def create_app() -> FastAPI:
 
     app.include_router(system.router)
     app.include_router(storage.router)
+    app.include_router(network.router)
     return app
 
 

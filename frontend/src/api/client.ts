@@ -48,6 +48,17 @@ export interface StorageResponse {
   filesystems: FilesystemUsage[];
 }
 
+export interface AggregateThroughput {
+  bytes_sent: number | null;
+  bytes_recv: number | null;
+  download_rate_bps: number | null;
+  upload_rate_bps: number | null;
+}
+
+export interface NetworkResponse {
+  aggregate: AggregateThroughput;
+}
+
 async function getJson<T>(path: string): Promise<T> {
   const res = await fetch(path, { headers: { Accept: "application/json" } });
   if (!res.ok) {
@@ -59,4 +70,5 @@ async function getJson<T>(path: string): Promise<T> {
 export const api = {
   getSystem: () => getJson<SystemResponse>("/api/system"),
   getStorage: () => getJson<StorageResponse>("/api/storage"),
+  getNetwork: () => getJson<NetworkResponse>("/api/network"),
 };
