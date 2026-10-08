@@ -38,17 +38,18 @@ export function Dashboard() {
       {!sys ? (
         <p className="text-slate-400">Loading metrics…</p>
       ) : (
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 lg:gap-5">
           {/* CPU */}
           <MetricCard
             title="CPU"
+            prominent
             action={<StatusBadge status={usageStatus(sys.cpu.usage_percent)} />}
           >
-            <div className="mb-2 flex items-baseline justify-between">
-              <span className="text-3xl font-bold text-slate-100">
+            <div className="mb-2 flex items-baseline justify-between gap-2">
+              <span className="shrink-0 whitespace-nowrap text-xl font-bold text-slate-100 sm:text-2xl lg:text-3xl">
                 {formatPercent(sys.cpu.usage_percent)}
               </span>
-              <span className="text-xs text-slate-400">
+              <span className="min-w-0 truncate text-xs text-slate-400">
                 {sys.cpu.core_count} cores
               </span>
             </div>
@@ -65,15 +66,16 @@ export function Dashboard() {
           {/* Memory */}
           <MetricCard
             title="Memory"
+            prominent
             action={
               <StatusBadge status={usageStatus(sys.memory.used_percent)} />
             }
           >
-            <div className="mb-2 flex items-baseline justify-between">
-              <span className="text-3xl font-bold text-slate-100">
+            <div className="mb-2 flex items-baseline justify-between gap-2">
+              <span className="shrink-0 whitespace-nowrap text-xl font-bold text-slate-100 sm:text-2xl lg:text-3xl">
                 {formatPercent(sys.memory.used_percent)}
               </span>
-              <span className="text-xs text-slate-400">
+              <span className="min-w-0 truncate text-xs text-slate-400">
                 {formatBytes(sys.memory.used_bytes)} /{" "}
                 {formatBytes(sys.memory.total_bytes)}
               </span>
@@ -93,7 +95,7 @@ export function Dashboard() {
             }
           >
             {sys.temperature_celsius !== null ? (
-              <span className="text-3xl font-bold text-slate-100">
+              <span className="shrink-0 whitespace-nowrap text-xl font-bold text-slate-100 sm:text-2xl lg:text-3xl">
                 {formatTemperature(sys.temperature_celsius)}
               </span>
             ) : (
@@ -103,7 +105,7 @@ export function Dashboard() {
 
           {/* Uptime */}
           <MetricCard title="Uptime">
-            <span className="text-3xl font-bold text-slate-100">
+            <span className="block shrink-0 whitespace-nowrap text-xl font-bold text-slate-100 sm:text-2xl lg:text-3xl">
               {formatUptime(sys.uptime_seconds)}
             </span>
           </MetricCard>
@@ -118,8 +120,10 @@ export function Dashboard() {
                   ["15m", sys.load_average.fifteen],
                 ] as const
               ).map(([label, value]) => (
-                <div key={label} className="text-center">
-                  <div className="text-2xl font-bold">{value.toFixed(2)}</div>
+                <div key={label} className="min-w-0 text-center">
+                  <div className="whitespace-nowrap text-xl font-bold sm:text-2xl lg:text-3xl">
+                    {value.toFixed(2)}
+                  </div>
                   <div className="text-xs text-slate-400">{label}</div>
                 </div>
               ))}
@@ -153,13 +157,16 @@ export function Dashboard() {
             <MetricCard
               key={fs.name}
               title={`Storage · ${fs.name}`}
+              prominent
               action={<StatusBadge status={usageStatus(fs.used_percent)} />}
             >
-              <div className="mb-2 flex items-baseline justify-between">
-                <span className="text-3xl font-bold text-slate-100">
+              <div className="mb-2 flex items-baseline justify-between gap-2">
+                <span className="shrink-0 whitespace-nowrap text-xl font-bold text-slate-100 sm:text-2xl lg:text-3xl">
                   {formatPercent(fs.used_percent)}
                 </span>
-                <span className="text-xs text-slate-400">{fs.mount}</span>
+                <span className="min-w-0 truncate text-xs text-slate-400">
+                  {fs.mount}
+                </span>
               </div>
               <UsageBar percent={fs.used_percent} />
               <div className="mt-3 flex justify-between text-xs text-slate-400">

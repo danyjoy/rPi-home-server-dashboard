@@ -1,0 +1,180 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "1. Add responsive padding and `prominent` span prop to `MetricCard`": [
+      {
+        "executionId": "e0dea755-1dba-427c-9f2e-6a8f2fc8c52c",
+        "chatSessionId": "sess_148fc32d-d02a-4a89-932d-9e9b24772573",
+        "timestamp": 1791455650449
+      },
+      {
+        "executionId": "e0dea755-1dba-427c-9f2e-6a8f2fc8c52c",
+        "chatSessionId": "sess_148fc32d-d02a-4a89-932d-9e9b24772573",
+        "timestamp": 1791455661111
+      },
+      {
+        "executionId": "e0dea755-1dba-427c-9f2e-6a8f2fc8c52c",
+        "chatSessionId": "sess_148fc32d-d02a-4a89-932d-9e9b24772573",
+        "timestamp": 1791455751117
+      }
+    ],
+    "2.1 Implement `useScrolled`": [
+      {
+        "executionId": "e0dea755-1dba-427c-9f2e-6a8f2fc8c52c",
+        "chatSessionId": "sess_148fc32d-d02a-4a89-932d-9e9b24772573",
+        "timestamp": 1791455650486
+      },
+      {
+        "executionId": "e0dea755-1dba-427c-9f2e-6a8f2fc8c52c",
+        "chatSessionId": "sess_148fc32d-d02a-4a89-932d-9e9b24772573",
+        "timestamp": 1791455661971
+      },
+      {
+        "executionId": "e0dea755-1dba-427c-9f2e-6a8f2fc8c52c",
+        "chatSessionId": "sess_148fc32d-d02a-4a89-932d-9e9b24772573",
+        "timestamp": 1791455752026
+      }
+    ],
+    "3. Checkpoint - set up the frontend test framework": [
+      {
+        "executionId": "e0dea755-1dba-427c-9f2e-6a8f2fc8c52c",
+        "chatSessionId": "sess_148fc32d-d02a-4a89-932d-9e9b24772573",
+        "timestamp": 1791455650526
+      },
+      {
+        "executionId": "e0dea755-1dba-427c-9f2e-6a8f2fc8c52c",
+        "chatSessionId": "sess_148fc32d-d02a-4a89-932d-9e9b24772573",
+        "timestamp": 1791455973449
+      },
+      {
+        "executionId": "e0dea755-1dba-427c-9f2e-6a8f2fc8c52c",
+        "chatSessionId": "sess_148fc32d-d02a-4a89-932d-9e9b24772573",
+        "timestamp": 1791456177847
+      }
+    ],
+    "4.1 Update the Metric_Grid container and per-card span flags": [
+      {
+        "executionId": "e0dea755-1dba-427c-9f2e-6a8f2fc8c52c",
+        "chatSessionId": "sess_148fc32d-d02a-4a89-932d-9e9b24772573",
+        "timestamp": 1791455650573
+      },
+      {
+        "executionId": "e0dea755-1dba-427c-9f2e-6a8f2fc8c52c",
+        "chatSessionId": "sess_148fc32d-d02a-4a89-932d-9e9b24772573",
+        "timestamp": 1791455763815
+      },
+      {
+        "executionId": "e0dea755-1dba-427c-9f2e-6a8f2fc8c52c",
+        "chatSessionId": "sess_148fc32d-d02a-4a89-932d-9e9b24772573",
+        "timestamp": 1791455833231
+      }
+    ],
+    "4.2 Make primary metric values responsive and non-clipping": [
+      {
+        "executionId": "e0dea755-1dba-427c-9f2e-6a8f2fc8c52c",
+        "chatSessionId": "sess_148fc32d-d02a-4a89-932d-9e9b24772573",
+        "timestamp": 1791455650608
+      },
+      {
+        "executionId": "e0dea755-1dba-427c-9f2e-6a8f2fc8c52c",
+        "chatSessionId": "sess_148fc32d-d02a-4a89-932d-9e9b24772573",
+        "timestamp": 1791455855350
+      },
+      {
+        "executionId": "e0dea755-1dba-427c-9f2e-6a8f2fc8c52c",
+        "chatSessionId": "sess_148fc32d-d02a-4a89-932d-9e9b24772573",
+        "timestamp": 1791455965049
+      }
+    ],
+    "5.1 Apply sticky/opaque/condensed classes and hostname truncation": [
+      {
+        "executionId": "e0dea755-1dba-427c-9f2e-6a8f2fc8c52c",
+        "chatSessionId": "sess_148fc32d-d02a-4a89-932d-9e9b24772573",
+        "timestamp": 1791455650640
+      },
+      {
+        "executionId": "e0dea755-1dba-427c-9f2e-6a8f2fc8c52c",
+        "chatSessionId": "sess_148fc32d-d02a-4a89-932d-9e9b24772573",
+        "timestamp": 1791455764679
+      },
+      {
+        "executionId": "e0dea755-1dba-427c-9f2e-6a8f2fc8c52c",
+        "chatSessionId": "sess_148fc32d-d02a-4a89-932d-9e9b24772573",
+        "timestamp": 1791455834197
+      }
+    ],
+    "7. Final checkpoint - verify build and dependency integrity": [
+      {
+        "executionId": "e0dea755-1dba-427c-9f2e-6a8f2fc8c52c",
+        "chatSessionId": "sess_148fc32d-d02a-4a89-932d-9e9b24772573",
+        "timestamp": 1791455650675
+      },
+      {
+        "executionId": "d57492ee-e596-48fd-b825-c086805298c3",
+        "chatSessionId": "sess_148fc32d-d02a-4a89-932d-9e9b24772573",
+        "timestamp": 1791456259383
+      },
+      {
+        "executionId": "d57492ee-e596-48fd-b825-c086805298c3",
+        "chatSessionId": "sess_148fc32d-d02a-4a89-932d-9e9b24772573",
+        "timestamp": 1791456319649
+      }
+    ],
+    "2. Create the dependency-free `useScrolled` hook": [
+      {
+        "executionId": "e0dea755-1dba-427c-9f2e-6a8f2fc8c52c",
+        "chatSessionId": "sess_148fc32d-d02a-4a89-932d-9e9b24772573",
+        "timestamp": 1791455752060
+      }
+    ],
+    "5. Make `StatHeader` sticky and condensed": [
+      {
+        "executionId": "e0dea755-1dba-427c-9f2e-6a8f2fc8c52c",
+        "chatSessionId": "sess_148fc32d-d02a-4a89-932d-9e9b24772573",
+        "timestamp": 1791455834230
+      }
+    ],
+    "4. Rewire the `Dashboard` metric grid, card order, and value typography": [
+      {
+        "executionId": "e0dea755-1dba-427c-9f2e-6a8f2fc8c52c",
+        "chatSessionId": "sess_148fc32d-d02a-4a89-932d-9e9b24772573",
+        "timestamp": 1791455965113
+      }
+    ],
+    "2.2 Write unit tests for `useScrolled`": [
+      {
+        "executionId": "e0dea755-1dba-427c-9f2e-6a8f2fc8c52c",
+        "chatSessionId": "sess_148fc32d-d02a-4a89-932d-9e9b24772573",
+        "timestamp": 1791456184858
+      }
+    ],
+    "4.3 Write property test for storage-card prominent span": [
+      {
+        "executionId": "e0dea755-1dba-427c-9f2e-6a8f2fc8c52c",
+        "chatSessionId": "sess_148fc32d-d02a-4a89-932d-9e9b24772573",
+        "timestamp": 1791456186147
+      }
+    ],
+    "4.4 Write property test for card-set invariance across widths": [
+      {
+        "executionId": "e0dea755-1dba-427c-9f2e-6a8f2fc8c52c",
+        "chatSessionId": "sess_148fc32d-d02a-4a89-932d-9e9b24772573",
+        "timestamp": 1791456187561
+      }
+    ],
+    "4.5 Write property test for unavailable-field substitution": [
+      {
+        "executionId": "e0dea755-1dba-427c-9f2e-6a8f2fc8c52c",
+        "chatSessionId": "sess_148fc32d-d02a-4a89-932d-9e9b24772573",
+        "timestamp": 1791456188510
+      }
+    ],
+    "4.6 Write unit/example tests for card ordering and presence": [
+      {
+        "executionId": "e0dea755-1dba-427c-9f2e-6a8f2fc8c52c",
+        "chatSessionId": "sess_148fc32d-d02a-4a89-932d-9e9b24772573",
+        "timestamp": 1791456189718
+      }
+    ]
+  }
+}
