@@ -8,6 +8,7 @@
   <circle cx="720" cy="54" r="5" fill="#22c55e"/>
   <text x="734" y="59" fill="#94a3b8" font-size="13">Online</text>
 
+  <!-- Row 1 -->
   <!-- CPU -->
   <g>
     <rect x="44" y="100" width="232" height="118" rx="14" fill="#0f172a" stroke="#1e293b"/>
@@ -18,6 +19,10 @@
     <text x="262" y="162" fill="#94a3b8" font-size="11" text-anchor="end">4 cores</text>
     <rect x="60" y="174" width="202" height="8" rx="4" fill="#1e293b"/>
     <rect x="60" y="174" width="47" height="8" rx="4" fill="#22c55e"/>
+    <rect x="60" y="192" width="47" height="5" rx="2" fill="#1e293b"/><rect x="60" y="192" width="18" height="5" rx="2" fill="#22c55e"/>
+    <rect x="112" y="192" width="47" height="5" rx="2" fill="#1e293b"/><rect x="112" y="192" width="30" height="5" rx="2" fill="#22c55e"/>
+    <rect x="164" y="192" width="47" height="5" rx="2" fill="#1e293b"/><rect x="164" y="192" width="12" height="5" rx="2" fill="#22c55e"/>
+    <rect x="216" y="192" width="46" height="5" rx="2" fill="#1e293b"/><rect x="216" y="192" width="33" height="5" rx="2" fill="#22c55e"/>
   </g>
   <!-- Memory -->
   <g>
@@ -39,6 +44,7 @@
     <text x="560" y="168" fill="#f1f5f9" font-size="26" font-weight="700">48.2°C</text>
   </g>
 
+  <!-- Row 2 -->
   <!-- Uptime -->
   <g>
     <rect x="44" y="234" width="232" height="110" rx="14" fill="#0f172a" stroke="#1e293b"/>
@@ -68,7 +74,7 @@
     <text x="762" y="326" fill="#e2e8f0" font-size="12" text-anchor="end">raspberrypi</text>
   </g>
 
-  <!-- Storage root -->
+  <!-- Row 3: Storage -->
   <g>
     <rect x="44" y="360" width="358" height="118" rx="14" fill="#0f172a" stroke="#1e293b"/>
     <text x="60" y="384" fill="#cbd5e1" font-size="11" font-weight="600" letter-spacing="1">STORAGE · ROOT</text>
@@ -82,7 +88,6 @@
     <text x="223" y="464" fill="#94a3b8" font-size="11" text-anchor="middle">77 GB free</text>
     <text x="386" y="464" fill="#94a3b8" font-size="11" text-anchor="end">125 GB total</text>
   </g>
-  <!-- Storage media -->
   <g>
     <rect x="420" y="360" width="356" height="118" rx="14" fill="#0f172a" stroke="#1e293b"/>
     <text x="436" y="384" fill="#cbd5e1" font-size="11" font-weight="600" letter-spacing="1">STORAGE · MEDIA</text>
