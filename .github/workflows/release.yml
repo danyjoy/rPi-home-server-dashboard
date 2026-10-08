@@ -1,0 +1,35 @@
+name: Release
+
+# When a semver tag (v1.2.3) is pushed, create a GitHub Release with
+# auto-generated notes. The image build/publish is handled separately by
+# build-images.yml, which also triggers on v* tags and produces a matching
+# versioned image tag (e.g. ghcr.io/.../-backend:1.2.3).
+
+on:
+  push:
+    tags: ["v*"]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # required to create the GitHub Release
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
+          body: |
+            Container images for this release are published to GHCR:
+
+            - `ghcr.io/danyjoy/rip-home-server-dashboard-backend:${{ github.ref_name }}`
+            - `ghcr.io/danyjoy/rip-home-server-dashboard-frontend:${{ github.ref_name }}`
+
+            Deploy on the Raspberry Pi by setting `TAG=${{ github.ref_name }}` in
+            `.env` and running `docker compose -f docker-compose.prod.yml up -d`.
